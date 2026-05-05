@@ -4,8 +4,11 @@
 a = Analysis(
     ['mcoabin.py'],
     pathex=[],
-    binaries=[],
-    datas=[],
+    binaries=[('ffmpeg.exe', '.')],
+    datas=[
+        ('app.ico', '.'), 
+        ('bgtravieso.jpg', '.')
+    ],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},
@@ -29,10 +32,11 @@ exe = EXE(
     upx=True,
     upx_exclude=[],
     runtime_tmpdir=None,
-    console=True,
+    console=False,
     disable_windowed_traceback=False,
     argv_emulation=False,
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
+    icon=['app.ico'],
 )
